@@ -1,0 +1,62 @@
+<html>
+<head>
+	<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="/stylesheets/style.css">
+	<script src="/bower_components/angular/angular.min.js"></script>
+	<script src="/javascripts/home.js"></script>
+</head>
+<body>
+	<div ng-app="myApp">
+		<div ng-controller= "firstCtrl">
+			<h1>home</h1>
+			<p>
+				Welcome to {{name}}
+			</p>
+			<p> 
+				salary:{{salary}}
+			</p>
+			<br><br><br><br>	
+			<input type="text" name="" ng-model="neha">
+				<h1>{{neha}}</h1>
+		</div>
+		<div ng-controller= "secCtrl">
+			<table>
+			  <tr ng-repeat="x in names">
+			    <td>{{ x.Name }}</td>
+			    <td>{{ x.Country }}</td>
+			  </tr>
+			</table>
+		</div>
+		<div ng-controller="thirdCtrl">
+			<select ng-model="selectedName" class="selectpicker btn btn-primary" ng-options="x for x in names"></select>
+			<br><br><br><br>
+			<div class="dropdown">
+			    <button class="btn btn-primary dropdown-toggle" ng-model="selectedName" type="button" data-toggle="dropdown">Dropdown Example
+			    <span class="caret"></span></button>
+			    <ul class="dropdown-menu">
+			      <li ng-repeat="x in names"><a ng-href="{{x.links}}">{{x}}</a></li>
+			    </ul>
+			</div>
+		</div>
+		<br>
+		<div ng-controller="fourthCtrl">
+			<button class="btn btn-default" ng-disabled="mySwitch">Click</button>
+			<br>
+			<input type="checkbox" ng-model="mySwitch">
+			<br>
+			<p>{{mySwitch}}</p>
+		</div>
+		<br>
+		<div ng-controller="fifthCtrl">
+			<button class="btn btn-danger" ng-click="myFunc()">Clickme</button>
+			<p ng-show="showMe">cbhdbycbiscbiabcyg</p>
+		</div>
+		<br>
+		<div ng-controller="sixthCtrl" ng-init="count=0;">
+			<button ng-class="{{buttons[count]}}" ng-click="count++">click</button>
+		</div>
+	</div>	
+</body>
+</html>

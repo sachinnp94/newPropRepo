@@ -1,0 +1,29 @@
+<html>
+<head>
+	<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="/stylesheets/style.css">
+	<script src="/bower_components/angular/angular.min.js"></script>
+	<script src="/javascripts/home.js"></script>
+</head>
+<body>
+<h1>Express</h1>
+<p>
+Welcome to express
+</p>
+<br>
+<hr>
+<div ng-controller="thirdCtrl">
+			<select ng-model="selectedName" ng-options="x for x in names"></select>
+			<br><br><br><br>
+			<div class="dropdown">
+			    <button class="btn btn-primary dropdown-toggle" ng-model="selectedName" type="button" data-toggle="dropdown">Dropdown Example
+			    <span class="caret"></span></button>
+			    <ul class="dropdown-menu">
+			      <li ng-repeat="x in names"><a href="">{{x}}</a></li>
+			    </ul>
+			</div>
+		</div>
+</body>
+</html>
